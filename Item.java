@@ -1,4 +1,4 @@
-public class Item
+ public class Item
 {
     private int myCatNum, myInventory;
     public Item(int nNum, int nInv)
