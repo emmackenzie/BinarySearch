@@ -1,3 +1,4 @@
+
  private Item[] store = 
 {
   new Item(184, 14), 
@@ -30,18 +31,22 @@ public int linearSearch(int catNumToFind)
 }
 public int recursiveLinearSearch(int catNumToFind, int startIndex)
 {
-  //complete this method
-  return -1;
+  if(startIndex == store.length)
+    return -1;
+  else if (store[startIndex].getCatNum() == catNumToFind)
+    return store[startIndex].getInventory();
+  else 
+    return recursiveLinearSearch(catNumToFind, startIndex+1);
 }
 public int binarySearch(int catNumToFind)
 {
     int low = 0;
-    int high = store.length-1;
-    int guess = (low+high)/2;  
+    int high = store.length-1; 
 
-   
+
     while(low <= high)
     {
+      int guess = (low+high)/2; 
       if(store[guess].getCatNum() > catNumToFind)
         high = guess-1;
       else if(store[guess].getCatNum() < catNumToFind)
